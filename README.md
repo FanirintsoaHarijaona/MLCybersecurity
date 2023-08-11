@@ -4,7 +4,7 @@ This project aims to provide a platform that will see both the domain of Cyberse
 detection skills from a container personalized for them. There will also be the possibility of testing the robustness of the Machine Learning Model itself by uploading it and having it undergo adversarial attacks. 
 
 # Requirements
-
+The main branch is the one that will be used. 
 To run this project, it is preferable if you are on a Linux environment and possess x11 server already installed on your pc. 
 Another requirement is to have both docker and docker-compose installed
 
