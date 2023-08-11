@@ -1,0 +1,6 @@
+CREATE TABLE test(
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   name VARCHAR(150),
+   email VARCHAR(250),
+   password VARCHAR(200)
+);
