@@ -1,0 +1,39 @@
+version: '2.4'
+services:
+  switch:
+    build: ~/openvswitch-docker
+    volumes:
+      - switch_volume:/var/lib/docker/volumes/switch-volume/_data
+    network_mode: my-network
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8080:80
+    command: /bin/sh
+  ubuntu:
+    build: ~/ubuntu-ids
+    volumes:
+      - ubuntu_volume:/var/lib/docker/volumes/ubuntuPC-volume/_data
+    network_mode: my-network
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - DISPLAY=$DISPLAY
+    ports:
+      - 8090:80
+  flask:
+    build: ~/MLCybersecurity-main/MLCybersecurity-main
+    environment:
+      - DISPLAY=$DISPLAY
+    ports:
+      - 5000:5000
+    depends_on:
+      - switch
+      - ubuntu
+volumes:
+  switch_volume:
+  ubuntu_volume:
+networks:
+  default:
+    name: my-network
+    external: true
