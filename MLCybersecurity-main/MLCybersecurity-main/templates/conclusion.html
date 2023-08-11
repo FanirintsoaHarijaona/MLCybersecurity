@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/conclusion.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenu">
+    <h2>The statistics of the adversarial testing</h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <tr>
+                <th></th>
+                {% for i in msg.keys()%}
+                <th>{{i}}</th>
+                {%endfor%}
+            </tr>
+                {%for i in msg.index%}
+                <tr>
+                    <span class="message"><td>{{i}}</td></span>
+                    {%for j in msg.keys()%}
+                        <td>{{msg[j][i]}}</td>
+                    {%endfor%}
+                </tr>
+                {%endfor%}
+        </table>
+    </div>
+    <h3>{{conclusion}}</h3>    
+</div>
+</body>
+</html>

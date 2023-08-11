@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>ML-Cybercurity</title>
+        <link rel="shortcut icon" href="../assets/images/fav.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="../assets/images/fav.jpg">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}" /> 
+</head>
+<body>
+    <div class="navbar navbar-light bg-dark ">
+        <form action="{{url_for('logout')}}" class="bouton1">
+            <button class="btn btn-lg fw-bold fs-7 btn-success mt-4 mb-3 bouton1 ">Logout</button>
+        </form>
+        <div class="d-flex justify-content-end">
+            <form action="{{url_for('upload_file')}}">
+                <button class="btn btn-lg fw-bold fs-7 btn-success mt-4 mb-3 bouton " >Upload model</button>
+            </form>
+            <form action="{{url_for('status')}}">
+                <button class="btn btn-lg fw-bold fs-7 btn-success mt-4  mb-3 bouton ">Start attack</button>
+            </form>
+        </div>
+    </div>
+    <div class="description w-75 mr-4">
+        <br><br>
+        <h1>Description</h1>
+        <br>
+        <h3>Vulnerability Testing</h3>
+        <p>This feature allows users to upload a model and test its vulnerability. 
+        By conducting a comprehensive analysis, the system identifies potential weaknesses in the model, 
+        such as incorrect configurations or known software vulnerabilities. 
+        This helps users identify and address any security gaps before deploying the model in a production environment.
+        The vulnerability assessment is carried out using a combination of automated network security scanning tools 
+        and manual techniques to ensure thorough coverage.
+        <br>Click on the <span class="fw-bold" >Upload model button</span> on the top left corner to test this.</p>
+        <br>
+        <h3> Attack Detection with Synthetic Data</h3>
+        <p> The second functionality focuses on detecting attacks originating from a switch to a computer. 
+        The system utilizes synthetic data to simulate various attack scenarios and analyzes the network traffic 
+        to identify any abnormal patterns or suspicious activities. By leveraging advanced algorithms and machine 
+        learning techniques, the system can detect and alert users about potential security breaches, 
+        enabling timely response and mitigation
+        <br>Click on the <span class="fw-bold">Start attack button</span> on the top left corner to test this.</p></p>
+    </div>
+</body>
+</html>

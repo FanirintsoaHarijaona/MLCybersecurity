@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/upload.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="title">
+                <h1>Upload model</h1>
+            </div>
+            <form method=post enctype=multipart/form-data>
+                 <div class="dropzone">
+                    <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" /> 
+                    <input type="file" class="upload-input" name="file" />
+                 </div>
+                <input type="submit" class="btn" name="uploadbutton" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
