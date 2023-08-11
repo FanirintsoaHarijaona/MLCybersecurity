@@ -24,11 +24,11 @@
 
 After installing the prerequirities libraries:
 
-### Login into mysql using command mysql -u <your username mysql> -p and run the following command
+### Login into mysql using command mysql -u "your username mysql" -p and run the following command
 
 - `create database users`
 
 ### Run the following commands to run the app
 
-- mysql -u <your username mysql> -p users < database.sql
+- mysql -u "your username in mysql" -p users < database.sql
 - `python3 app.py`
