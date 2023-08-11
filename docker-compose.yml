@@ -1,7 +1,7 @@
 version: '2.4'
 services:
   switch:
-    build: ~/openvswitch-docker
+    build: ~/MLCybersecurity/openvswitch-docker
     volumes:
       - switch_volume:/var/lib/docker/volumes/switch-volume/_data
     network_mode: my-network
@@ -11,7 +11,7 @@ services:
       - 8080:80
     command: /bin/sh
   ubuntu:
-    build: ~/ubuntu-ids
+    build: ~/MLCybersecurity/ubuntu-ids
     volumes:
       - ubuntu_volume:/var/lib/docker/volumes/ubuntuPC-volume/_data
     network_mode: my-network
@@ -22,7 +22,7 @@ services:
     ports:
       - 8090:80
   flask:
-    build: ~/MLCybersecurity-main/MLCybersecurity-main
+    build: ~/MLCybersecurity/MLCybersecurity-main/MLCybersecurity-main
     environment:
       - DISPLAY=$DISPLAY
     ports:
@@ -30,6 +30,12 @@ services:
     depends_on:
       - switch
       - ubuntu
+      - db
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "users"
 volumes:
   switch_volume:
   ubuntu_volume:
